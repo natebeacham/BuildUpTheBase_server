@@ -1,0 +1,12 @@
+{
+  "name": "buildup",
+  "version": "1.0.0",
+  "description": "buildup_thebase",
+  "author": "natebeacham",
+  "devDependencies": {
+    "grunt": "*",
+    "grunt-cli": "*",
+    "grunt-contrib-sass": "*",
+    "grunt-contrib-watch": "*"
+  }
+}

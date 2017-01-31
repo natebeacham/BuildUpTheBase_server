@@ -4,6 +4,10 @@
 cocos2d/**
 bin/**
 
+.sass-cache
+app.db
+buildup_server/local.py
+
 **/xcuserdata/**
 **/build/**
 
@@ -42,6 +46,8 @@ proj.win32/Debug.win32/beatupisis.log
 *tags*
 
 raw/*
+
+node_modules
 
 !raw/buildup_editor/*
 !raw/buildup_editor

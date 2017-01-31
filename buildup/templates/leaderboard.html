@@ -1,61 +1,52 @@
 {% extends "base.html" %}
 
-{% block page_title %}
-Leaderboard
-{% endblock %}
+{% load humanize %}
 
-{% block styles %}
-    body {
-        counter-reset: player-index;
-    }
-
-    .player-username {
-        counter-increment: player-index;
-    }
-
-    .player-username:before {
-        content: counter(player-index) "." ;
-    }
-
-    .current_player { 
-        background-color: gainsboro;
-    }
-{% endblock %}
+{% block page_title %}Leaderboard{% endblock %}
+{% block title %}Leaderboard{% endblock %}
+{% block subtitle %}Who's better than you?{% endblock %}
 
 {% block content %}
-<h1>Leaderboard</h1>
-<h2>Who's better than you?</h2>
 
-<div>
+<div class="page-info">
     So far there's {{ players|length }} players. Opt in to the Android alpha <a href="https://play.google.com/apps/testing/com.tankorsmash.buildupthebase?utm_source=buildupthebase.com&utm_medium=banner&utm_campaign=alpha&utm_content=buildupthebase.com%20leaderboard">here</a>.
 </div>
 
 <div id="leaderboard ">
     {% for player in players %}
-    <div class="card-row player-detail m-y-1 {% if player_id == player.username %}current_player{% endif %}">
-        <!--username-->
-        <div class="player-username"> 
-            <a href="{% url 'user-detail' username=player.username %}">
-                {{ player.username }}
-            </a>
-            <span class="text-sm-right small text-muted player-last-login"> 
-                as of {{ player.last_login }}
-            </span>
-        </div>
 
-        <!--user stats-->
-        <div class="row">
-            <div class="col-md-3 player-building_levels"> 
-                Total levels: {{ player.total_building_levels }}
-            </div>
-            <div class="col-md-5 player-coins"> 
-                {{ player.pretty_coins }} total coins
-            </div>
-            <div class="col-md-4 player-coins"> 
-                Est. {{ player.cps }} coins/sec
-            </div>
-        </div>
-    </div>
+		 <div class="row player-row">
+			 <div class="col-xs-12 col-md-2 col-lg-1 text-xs-center">
+				 <span class="ordinal">{{ forloop.counter|ordinal }}</span>
+			 </div>
+
+			 <div class="col-xs-12 col-md-10 col-lg-11">
+				 <div class="row">
+					 <div class="col-xs-12">
+						<h4>
+							<a href="{% url 'user-detail' username=player.username %}">
+								{{ player.username }}
+							</a>
+						</h4>
+						<span class="text-sm-right small text-muted player-last-login"> 
+                		as of {{ player.last_login }}
+            		</span>
+					</div>
+				</div>
+
+				<div class="row metas">
+					<div class="col-md-3 player-building_levels"> 
+						Total levels: {{ player.total_building_levels }}
+					</div>
+					<div class="col-md-5 player-coins"> 
+						{{ player.pretty_coins }} total coins
+					</div>
+					<div class="col-md-4 player-coins"> 
+						Est. {{ player.cps }} coins/sec
+					</div>
+				</div>
+			 </div>
+		 </div>
     {% endfor %}
     <small class="text-muted">pagination is for chumps.</small>
 </div>

@@ -5,23 +5,29 @@
 {% endblock %}
 
 {% block content %}
-    <h1> Build Up The Base! </h1>
-    <div class="h3">
-        Opt in to the Android alpha <a href="https://play.google.com/apps/testing/com.tankorsmash.buildupthebase?utm_source=buildupthebase.com&utm_medium=banner&utm_campaign=alpha&utm_content=buildupthebase.com%20frontpage">here</a>.
-    </div>
-    <br>
-    <div>
-        <a href="{% url "leaderboard" %}"> LEADERBOARDS</a> 
-        <div>
-            Wow, {{ players|length }} players. Things are heating up.
-        </div>
-    </div>
-    <br>
-    <div>
-        <a href="{% url "changelog" %}"> CHANGELOG</a>
-        <div>
-            Classic, sleek, modern design, fresh from 2005.
-        </div>
-    </div>
-</body>
+	<div class="row">
+		<div class="col-xs-12 col-md-6">
+			<div class="card">
+				<div class="card-block">
+					<h4 class="card-title"><a href="{% url "leaderboard" %}">LEADERBOARDS</a></h4>
+
+					<div class="card-text">
+						Wow, {{ players|length }} players. Things are heating up.
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-xs-12 col-md-6">
+			<div class="card">
+				<div class="card-block">
+					<h4 class="card-title"><a href="{% url "changelog" %}">CHANGELOG</a></h4>
+
+					<div class="card-text">
+						Classic, sleek, modern design, fresh from 2005.
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 {% endblock %}
