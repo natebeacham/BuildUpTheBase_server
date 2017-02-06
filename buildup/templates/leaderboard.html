@@ -15,9 +15,9 @@
 <div id="leaderboard ">
     {% for player in players %}
 
-		 <div class="row player-row">
+		 <div class="row player-row {% if forloop.counter == 1 %} first {% endif %}">
 			 <div class="col-xs-12 col-md-2 col-lg-1 text-xs-center">
-				 <span class="ordinal">{{ forloop.counter|ordinal }}</span>
+				 <span class="ordinal {% if forloop.counter == 1 %} first {% elif forloop.counter <= 10 %} good {% endif %}">{{ forloop.counter|ordinal }}</span>
 			 </div>
 
 			 <div class="col-xs-12 col-md-10 col-lg-11">
@@ -48,6 +48,11 @@
 			 </div>
 		 </div>
     {% endfor %}
-    <small class="text-muted">pagination is for chumps.</small>
+
+	 <div class="row">
+		 <div class="col-xs-12 text-xs-center m-t-1">
+			<small class="text-muted">pagination is for chumps.</small>
+		 </div>
+	 </div>
 </div>
 {% endblock %}

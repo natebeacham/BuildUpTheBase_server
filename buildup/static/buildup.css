@@ -11,16 +11,28 @@ body {
 nav a {
   margin: 0 1em;
   color: #333; }
+  nav a.active {
+    border-bottom: 2px solid #555; }
+  nav a:hover {
+    color: #555;
+    text-decoration: none; }
+@media (max-width: 600px) {
+  nav a {
+    display: block;
+    padding: 1em; }
+  nav .join-alpha-button {
+    display: none; } }
 
 h1 {
   font-size: 160%; }
 
 h3 {
-  font-size: 120%; }
+  font-size: 100%; }
 
 h1, h3 {
-  font-family: "Audiowide", monospace;
-  font-weight: 400; }
+  font-family: "Press Start 2P", monospace;
+  font-weight: 400;
+  letter-spacing: -1px; }
 
 header {
   background: #fafafa;
@@ -38,26 +50,40 @@ header {
 .player-row {
   margin: 1em 0;
   border-bottom: 1px solid #eee; }
+  .player-row.first {
+    background: #f3f3f3;
+    padding: 1em 0;
+    border-radius: 10px;
+    border: 1px solid #ccc; }
   .player-row .ordinal {
     display: inline-block;
     padding: 0;
-    background: #777;
+    background: #eee;
     border-radius: 100%;
-    color: #fff;
+    color: #555;
     width: 60px;
     height: 60px;
     line-height: 60px;
     text-align: center;
     font-weight: 700; }
+    @media (max-width: 600px) {
+      .player-row .ordinal {
+        margin-bottom: 1em; } }
+    .player-row .ordinal.first {
+      background: #008200;
+      color: #fff; }
+    .player-row .ordinal.good {
+      background: #82b172;
+      color: #fff; }
   .player-row h4 {
     font-size: 100%;
-    font-family: "Audiowide", monospace;
+    font-family: "Press Start 2P", monospace;
     display: inline-block; }
     .player-row h4 a {
       color: #555; }
   .player-row .metas {
     margin-top: 1em;
-    margin-bottom: 2em;
+    margin-bottom: 1em;
     color: #777; }
 
 footer {

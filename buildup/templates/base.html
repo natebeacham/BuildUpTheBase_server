@@ -12,8 +12,8 @@
 
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css" integrity="sha384-MIwDKRSSImVFAZCVLtU0LMDdON6KVCrZHyVQQj6e8wIEJkW4tvwqXrbMIya1vriY" crossorigin="anonymous">
-
-			<link rel="stylesheet" href="{% static 'buildup.css' %}">
+		  <link href="https://fonts.googleapis.com/css?family=Abel|Press+Start+2P" rel="stylesheet">
+		  <link rel="stylesheet" href="{% static 'buildup.css' %}">
 
         <title>{% block page_title %}{% endblock %} | Build Up The Base</title>
 
@@ -43,7 +43,7 @@
 					<a href="{% url "leaderboard" %}">LEADERBOARDS</a>
 					<a href="{% url "changelog" %}">CHANGELOG</a>
 
-					<a href="https://play.google.com/apps/testing/com.tankorsmash.buildupthebase?utm_source=buildupthebase.com&utm_medium=banner&utm_campaign=alpha&utm_content=buildupthebase.com%20frontpage" class="btn btn-success btn-sm">
+					<a href="https://play.google.com/apps/testing/com.tankorsmash.buildupthebase?utm_source=buildupthebase.com&utm_medium=banner&utm_campaign=alpha&utm_content=buildupthebase.com%20frontpage" class="btn btn-success btn-sm join-alpha-button">
 						Join Alpha
 					</a>
 				</nav>
@@ -73,7 +73,7 @@
 						</div>
 					 {% endif %}
 
-					<div class="text-sm-center m-t-2">
+					<div class="text-xs-center m-t-2">
 						<a href="https://play.google.com/apps/testing/com.tankorsmash.buildupthebase?utm_source=buildupthebase.com&utm_medium=banner&utm_campaign=alpha&utm_content=buildupthebase.com%20frontpage" class="btn btn-success btn-lg">
 							Join Alpha
 						</a>
@@ -86,6 +86,6 @@
 			<script src="{% static 'jquery/3.0.0/jquery.min.js' %}"></script>
 			<script src="{% static 'tether/1.2.0/js/tether.min.js' %}"></script>
 			<script src="{% static 'bootstrap/4.0.0-alpha.3/js/bootstrap.min.js' %}"></script>
-			<link href="https://fonts.googleapis.com/css?family=Abel|Audiowide|Press+Start+2P" rel="stylesheet"
+			<script src="{% static 'src/app.js' %}"></script>
     </body>
 </html>
